@@ -18,10 +18,10 @@ namespace ATM_using_MVC_CRUD.Controllers
         public IActionResult Index() => View();
 
         [HttpPost]
-        public async Task<IActionResult> Login(int accountNumber, string pin)
+        public async Task<IActionResult> Index(int accountNumber, string pin)
         {
             var user = await _custContext.Customers
-                .FirstOrDefaultAsync(u => u.AccountNumber == accountNumber && u.Pin == pin);
+       .FirstOrDefaultAsync(u => u.AccountNumber == accountNumber && u.Pin == pin);
 
             if (user == null)
             {
