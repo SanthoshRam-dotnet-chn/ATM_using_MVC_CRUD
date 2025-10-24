@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ATM_using_MVC_CRUD.Models.Customer>
+
+@{
+    ViewData["Title"] = "Customer List";
+}
+
+<h2>All Customers</h2>
+
+<p>
+    <a href="/Customer/AddCustomer" class="btn btn-primary">Add New Customer</a>
+</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Account Number</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Pin</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var cust in Model)
+        {
+            <tr>
+                <td>@cust.AccountNumber</td>
+                <td>@cust.Name</td>
+                <td>@cust.Email</td>
+                <td>@cust.Phone</td>
+                <td>@cust.Pin</td>
+                <td>
+                    <a href="/Customer/GetCustomerById/@cust.Id" class="btn btn-info">View</a> |
+                    <a href="/Customer/UpdateCustomer/@cust.Id" class="btn btn-warning">Edit</a> |
+                    <a href="/Customer/DeleteCustomer/@cust.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

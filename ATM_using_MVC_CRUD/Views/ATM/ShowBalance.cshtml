@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Balance";
+}
+
+<h2>Account Balance</h2>
+
+@if (ViewBag.Balance != null)
+{
+    <h3>Your current balance is: <span style="color:green">₹@ViewBag.Balance</span></h3>
+}
+
+<a href="/ATM/Dashboard" class="btn btn-secondary">Back</a>

@@ -1,0 +1,32 @@
+﻿@model ATM_using_MVC_CRUD.Models.Customer
+@{
+    ViewData["Title"] = "Update Customer";
+}
+
+<h2>Update Customer</h2>
+
+<form asp-action="UpdateCustomer" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label>Account Number:</label>
+        <input asp-for="AccountNumber" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label>Name</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Phone</label>
+        <input asp-for="Phone" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>PIN</label>
+        <input asp-for="Pin" type="password" maxlength="4" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>

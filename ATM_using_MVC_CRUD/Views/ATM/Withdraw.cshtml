@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Withdraw";
+}
+
+<h2>Withdraw Money</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label>Amount</label>
+        <input type="number" name="amount" step="0.01" min="1" class="form-control" required />
+    </div>
+
+    <button type="submit" class="btn btn-danger">Withdraw</button>
+</form>
+
+@if (ViewBag.Message != null)
+{
+    <p style="color:green">@ViewBag.Message</p>
+}
